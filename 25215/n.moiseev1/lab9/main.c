@@ -9,9 +9,12 @@ int main(void) {
 
 	if (pid == -1) {
 		perror("Error when creating a child process");
+		return 1;
 	} else if (pid == 0) {
 		char* args[] = {"cat", "file.txt", NULL};
 		execvp("cat", args);
+		perror("Error after calling execvp");
+		return 1;
 	} else {
 		waitpid(pid, NULL, 0);
 		printf("The parent writing something...\n");
