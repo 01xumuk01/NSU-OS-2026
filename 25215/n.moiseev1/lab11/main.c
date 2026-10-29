@@ -1,3 +1,4 @@
+#define __EXTENSIONS__ 1
 #define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <sys/types.h>
